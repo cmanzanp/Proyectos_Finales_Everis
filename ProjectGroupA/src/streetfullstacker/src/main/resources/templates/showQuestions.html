@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>StreetFullstacker</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous">
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+			crossorigin="anonymous"></script>
+		<style>
+			@import
+			url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap')
+			;
+
+			.font8bit {
+				font-family: 'Press Start 2P', cursive;
+			}
+		</style>
+	</head>
+	<body class="container bg-dark">
+    	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/}"><img
+				src="https://www.everis.com/sites/all/themes/everis/logo.png"
+				alt="Everis logo" style="width: 120px"></a> <a
+				class="navbar-brand" th:href="@{/}"><img
+				src="https://media.discordapp.net/attachments/787764597335130128/789067767315038228/arcade-font-writer.png"
+				alt="Everis logo" style="width: 300px"></a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link active font8bit" aria-current="page"
+						th:href="@{/}" role="button">home</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+		<div class="card m-5">
+        	<div class="card-header font8bit text-light bg-dark">HERE COMES A NEW CHALLENGER!</div>
+        	<div class="card-body bg-dark">
+            	<!-- <form th:action="@{/actSubmitAnswer}" method="GET"> NO FUNCIONA EL MÉTODO DE EVALUACIÓN-->
+            		<form th:action="@{/showResultView}" method="GET">	<!-- ALTERNATIVA POR NO FUNCIONAR EL MÉTODO DE EVALUACIÓN -->
+               		<div class="form-group">
+                   		<th:block th:each="question : ${questionsListView}">
+                       		<h6 th:text="${question.questionAsk}" class="font8bit text-light"></h6>
+                       		<input class="form-check-input"  type="radio" required="required"
+                           		id="Yes" th:name="${question.questionId}" value="true">
+                       		<label class="form-check-label font8bit text-light " for="Yes">Yes</label>
+                       		<input class="form-check-input" type="radio" required="required"
+                           		id="No" th:name="${question.questionId}" value="false">
+                       		<label class="form-check-label font8bit text-light" for="No">No</label>
+                   		</th:block>
+               		</div>
+               		<button type="submit" name="btnSubmitAnswer"
+                   		class="btn btn-danger mt-2 float-end font8bit">FIGHT!</button>
+            	</form>
+        	</div>
+    	</div>
+	</body>
+</html>
