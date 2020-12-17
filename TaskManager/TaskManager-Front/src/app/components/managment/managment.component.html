@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 1vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 align-self-center text-center">
+            <h1>MANAGEMENT</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 4vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 align-self-center text-center">
+            <h3>CREATE A NEW USER</h3>
+            <div style="margin-top: 2vw;">
+                <div class="mb-3">
+                    <label for="username" class="form-label">User Name</label>
+                    <input [(ngModel)]="username" type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                        placeholder="User name">
+                </div>
+                <div class="mb-3">
+                    <label for="usersurname" class="form-label">User Surname</label>
+                    <input [(ngModel)]="usersurname" type="text" class="form-control" id="usersurname" placeholder="User Surname">
+                </div>
+                <div class="mb-3">
+                    <label for="userage" class="form-label">User Age</label>
+                    <input [(ngModel)]="userage" type="text" class="form-control" id="userage" aria-describedby="emailHelp"
+                        placeholder="User Age">
+                </div>
+                <button style="margin-bottom: 3vw;" (click)="createUser()" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <div class="col-sm-6 align-self-center text-center" style="margin-bottom: 2vw;">
+            <h3>CREATE A NEW PROJECT</h3>
+            <div style="margin-top: 2vw;">
+                <div class="mb-3">
+                    <label for="projectname" class="form-label">Project Name</label>
+                    <input type="text" [(ngModel)]="projectname"class="form-control" id="projectname" aria-describedby="emailHelp"
+                        placeholder="Project Name">
+                </div>
+                <div class="mb-3">
+                    <label for="projectdescription">Project Description</label>
+                    <textarea [(ngModel)]="projectdescription" placeholder="Project Description..." class="form-control" id="projectdescription" rows="3"></textarea>
+                </div>
+                <button style="margin-bottom: 3vw;" (click)="createProject()" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+
+</div>

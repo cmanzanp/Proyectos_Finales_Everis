@@ -1,0 +1,26 @@
+<div class="container" style="margin-top: 1vw;">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 align-self-center text-center">
+            <h1>Project: {{project.projectName}}</h1>
+            <h4>Description: {{project.projectDescription}}</h4>
+            <table class="table" style="margin-top: 2vw;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Surname</th>
+                        <th scope="col">Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of project.users">
+                        <th scope="row">{{user.userId}}</th>
+                        <td>{{user.userName}}</td>
+                        <td>{{user.userSurname}}</td>
+                        <td>{{user.userAge}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
